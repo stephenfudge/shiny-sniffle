@@ -1,7 +1,8 @@
 :root {
     --light: lightcoral;
     --color2: #D3ECA7;
-
+    --color3: #ffffff;
+    --cent: center;
 }
 
 
@@ -18,32 +19,11 @@ body {
     background-color: var(--light);
     flex: flex;
     font-family: 'Roboto Condensed', sans-serif;
-    ;
-
 }
 
-
-
-/* Header Section Element Selectors */
-header {
-    padding: 20px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: var(--light);
-    color: #ffffff;
-}
-
-header h1 {
-    display: inline-block;
-    font-size: 48px;
-}
-
-
-nav {
-    padding-top: 15px;
-    margin-right: 20px;
-    float: right;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
+a {
+    color: var(--color3);
+    text-decoration: none;
 }
 
 ul {
@@ -55,45 +35,32 @@ li {
     margin-left: 25px;
 }
 
-a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-h2 {
-    margin-left: 20px;
-}
-
-footer {
-    background-color: var(--light);
-    padding-top: 15px;
-    padding-bottom: 20px;
-    text-align: center;
-}
-
 section {
     padding: 3%;
     margin: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
 }
 
 
-h2 #about-me {
-    margin-left: 2%;
-
+/* Header Section Element Selectors */
+header {
+    padding: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: var(--color3);
 }
 
-.text-right {
-    text-align: center;
+header h1 {
+    display: inline-block;
+    font-size: 48px;
 }
 
+nav {
+    padding-top: 15px;
+    margin-right: 20px;
+    float: right;
+    font-size: 20px;
+}
 
-/* Class Selectors */
-
-/* about me section */
-
+/* About Me section */
 .about-me {
     background-color: var(--color2);
     display: flex;
@@ -104,81 +71,56 @@ h2 #about-me {
     flex: 1 1 30%;
 }
 
+.profilepic {
+    border-radius: 40%;
+    margin-right: 55%;
+}
+
 .about-me .secondary {
     flex: 1 1 70%;
+    margin-top: 7%;
 }
 
-/* 
-body {
-    background-color: bisque;
-    color: darkslateblue;
-    position: relative;
-} */
+.about-me h2 {
+    margin-left: 22%;
+}
 
-/* header {
-    position: fixed;
-} */
-
-/* nav {
-    position: fixed;
-} */
 
 /* Work Section  */
-
-
 .work {
-    background-color: #A1B57D;
+    background-color: #B4E197;
+}
+
+.work h2 {
+    text-align: var(--cent);
+    padding-bottom: 5%;
+}
+
+.flexcards {
     display: flex;
-    flex: 0 1 50%;
-    justify-content: space-evenly;
     flex-direction: row;
     flex-wrap: wrap;
-    /* flex-wrap: wrap; */
+    justify-content: space-evenly;
 }
 
-
-
-
-
-/* Contact Section */
-.contact {
-    background-color: var(--color2);
-    justify-content: center;
-    text-align: center;
-}
-
-
-
-/*  Media Selectors */
-
-@media screen and (max-width:992px) {
-    header {
-        size: 75%;
-    }
-
-    .work {}
-}
-
-@media screen and (max-width:762px) {
-    header: size: 50%;
-}
-
-/* Responsive columns */
-@media screen and (max-width: 762px) {
-    .column {
-        width: 100%;
-        display: block;
-        margin-bottom: 20px;
-    }
-}
-
-
-
+/* Cards making them opaque and creating a flexbox */
 .card {
-    /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     opacity: 0.5;
+    flex: 0 0 25%;
+    justify-content: var(--cent);
+}
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 4px;
+    text-align: var(--cent);
+}
+
+h3 {
+    font-weight: bolder;
+    color: black;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -188,28 +130,40 @@ body {
     opacity: 1;
 }
 
-/* Add some padding inside the card container */
-.container {
-    padding: 2px 4px;
+
+/* Contact Section */
+.contact {
+    background-color: var(--color2);
+    justify-content: var(--cent);
+    text-align: var(--cent);
 }
 
 
-
-/* Float four columns side by side */
-.column {
-    float: left;
-    width: 25%;
-    padding: 0 10px;
+/* Footer Section */
+.footer {
+    padding-top: 15px;
+    padding-bottom: 20px;
+    text-align: var(--cent);
 }
 
-/* Remove extra left and right margins, due to padding */
-.row {
-    margin: 0 -5px;
+
+/*  Media Selectors */
+@media screen and (max-width:992px) {
+    header {
+        size: 75%;
+    }
+
+    .card {
+        flex: 0 0 50%;
+    }
 }
 
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+@media screen and (max-width:762px) {
+    header {
+        size: 50%;
+    }
+
+    .card {
+        flex: 0 0 100%;
+    }
 }
